@@ -1,0 +1,7 @@
+Docker image : The image is a bundle of OS , software packages
+Container : when we run an image, the running image is called a Container
+docker pull imagename:versionnoofimage          /*To Pull an image from Docker hub:*/
+docker image ls                                 /*To check whether image is downlaoded or not*/
+docker Container run -p 8080:80 -d  imagename   /* to run the downloaded image */
+docker Container stop imageno                   /* To stop the Container */
+docker container rm imagano                     /* To remove the image */

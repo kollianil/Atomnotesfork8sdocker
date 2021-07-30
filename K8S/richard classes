@@ -1,0 +1,17 @@
+k8s - orchestration tool
+k8s can be installed on a vm box by using kubectl
+EKS - Managed k8s, where AWS gives the complete setup by installing it,
+we just need to and deploy the yam script
+
+/****
+Pods :
+These are the smallest basic deployable objects in k8s. pod represents a single
+ instance of a running process in your cluster..
+ Pods contain one or more containers, such as docker containers.
+
+kubectl get all               / * lists everything we have defined in k8s cluster(resources, pod info etc) */
+kubectl apply -f .yaml        /* to run and apply any yaml file */
+kubectl describe pod podname
+kubectl exec podname ls       /* Run command in existing pod */
+kubectl -it exec podaname sh  /* to run in interactive mode */
+ 
