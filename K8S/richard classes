@@ -14,4 +14,9 @@ kubectl apply -f .yaml        /* to run and apply any yaml file */
 kubectl describe pod podname
 kubectl exec podname ls       /* Run command in existing pod */
 kubectl -it exec podaname sh  /* to run in interactive mode */
- 
+kubectl get pods              /* lists the pod running on the cluster */
+
+ Services in k8s:
+ An abstract way to expose an application running on a set of Pods as a network service
+
+ Node port :
