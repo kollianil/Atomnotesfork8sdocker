@@ -9,14 +9,31 @@ These are the smallest basic deployable objects in k8s. pod represents a single
  instance of a running process in your cluster..
  Pods contain one or more containers, such as docker containers.
 
-kubectl get all               / * lists everything we have defined in k8s cluster(resources, pod info etc) */
-kubectl apply -f .yaml        /* to run and apply any yaml file */
+kubectl get all                 / * lists everything we have defined in k8s cluster(resources, pod info etc) */
+kubectl apply -f .yaml          /* to run and apply any yaml file */
 kubectl describe pod podname
-kubectl exec podname ls       /* Run command in existing pod */
-kubectl -it exec podaname sh  /* to run in interactive mode */
-kubectl get pods              /* lists the pod running on the cluster */
+kubectl exec podname ls         /* Run command in existing pod */
+kubectl -it exec podaname sh    /* to run in interactive mode */
+kubectl get pods                /* lists the pod running on the cluster */
+kubectl get pods --show-labels  /* lists the pod with labels name */
+kubectl apply -f .              /* Applies all the yaml files in the directory */
+kubectl rollout  status deploy appname /* Lists the current status of any deployments we are doing */
+kubectl rollout undo deploy appname /*  to undo the current rollout and rollback to the previous version */
+kubectl logs -f podname                  /* to check logs of the pod */
 
  Services in k8s:
  An abstract way to expose an application running on a set of Pods as a network service
 
  Node port :
+
+
+Replica set :
+Its purpose is to maintain a stable set of pods running at any given point of time.
+
+Name space :
+It is something that will span entire the k8s cluster, it is mainly used for isolation of our Applications.
+
+example :
+A pod created under dev name space cannot be communicated with other name space name even though they are in same cluster.
+we can allocate resource allocation (ram/memory) to name space so that ot can be used through out the name space defined.
+For ex: dev env can be executed in less amt of resources so dev name space will be allocate with less resources through out the namespace.
